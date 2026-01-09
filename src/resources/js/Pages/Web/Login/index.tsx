@@ -12,7 +12,7 @@ export const Login = React.memo(function Login({ status, canResetPassword }: { s
     const { data, setData, post, processing, errors, reset, submit } = useLogin()
 
     return (
-        <WebLayout>
+        <WebLayout showFooter={false}>
             <div className='p-4'>
                 <div className='flex justify-center'>
                     <TitleText>ログイン</TitleText>
