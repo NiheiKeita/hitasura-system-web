@@ -19,17 +19,17 @@ export const CtaPanel = React.memo<Props>(function CtaPanel({
     secondaryRoute,
 }) {
     return (
-        <div className="rounded-3xl border border-slate-200 bg-slate-900 p-6 text-white shadow-lg md:p-10">
+        <div className="rounded-3xl border border-brand-primary bg-brand-primary p-6 text-white shadow-lg md:p-10">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                 <div>
                     <h2 className="text-xl font-semibold md:text-2xl">{title}</h2>
-                    <p className="mt-2 text-sm text-slate-200 md:text-base">{description}</p>
+                    <p className="mt-2 text-sm text-white/90 md:text-base">{description}</p>
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row">
                     <button
                         type="button"
                         onClick={() => router.visit(route(primaryRoute))}
-                        className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
+                        className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-brand-primary transition hover:bg-brand-muted"
                     >
                         {primaryLabel}
                     </button>

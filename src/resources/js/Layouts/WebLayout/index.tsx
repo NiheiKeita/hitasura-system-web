@@ -16,8 +16,8 @@ export const WebLayout = React.memo<Props>(function AdminLayout({
     return (
         <>
             <WebHeader page={page} />
-            <div className="flex min-h-screen flex-col bg-white font-yuGothic">
-                <main className="mx-auto w-full max-w-6xl px-4 pb-12 pt-6">
+            <div className="flex min-h-screen flex-col bg-brand-base font-yuGothic text-brand-text">
+                <main className="mx-auto w-full max-w-6xl px-4 pb-16 pt-6 md:px-6">
                     {children}
                 </main>
                 {showFooter && <WebFooter />}

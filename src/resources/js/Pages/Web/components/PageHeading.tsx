@@ -2,7 +2,7 @@ import React from 'react'
 
 type Props = {
     title: string
-    lead: string
+    lead?: string
     eyebrow?: string
 }
 
@@ -13,7 +13,9 @@ export const PageHeading = React.memo<Props>(function PageHeading({ title, lead,
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">{eyebrow}</p>
             )}
             <h1 className="mt-3 text-2xl font-semibold text-slate-900 md:text-4xl">{title}</h1>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">{lead}</p>
+            {lead && (
+                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">{lead}</p>
+            )}
         </div>
     )
 })

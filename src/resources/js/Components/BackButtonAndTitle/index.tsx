@@ -9,7 +9,7 @@ type Props = {
 
 export const BackButtonAndTitle = React.memo<Props>(function BackButtonAndTitle({
     children,
-    backURL = route("admin.dashboard.index")
+    backURL = route('web.top')
 }) {
     return (
         <div className="relative flex items-center py-3">

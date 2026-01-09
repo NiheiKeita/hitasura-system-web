@@ -16,14 +16,20 @@ export default {
                 yuGothic: ['"Yu Gothic"', 'sans-serif'],
             },
             colors: {
-                'theme': {
+                theme: {
                     light: '#67e8f9',
-                    // DEFAULT: '#292986',
                     dark: '#0e7490',
                     default: '#292986',
-                    DEFAULT: "#7FA5FE",
+                    DEFAULT: '#7FA5FE',
                     backgroundColor: '#F0F3F6',
-                    sub: "#7FA5FE"
+                    sub: '#7FA5FE',
+                },
+                brand: {
+                    primary: '#5071FF',
+                    accent: '#6F89FF',
+                    muted: '#EEF1FF',
+                    text: '#525353',
+                    base: '#FFFFFF',
                 },
             },
         },

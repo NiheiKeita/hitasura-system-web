@@ -1,70 +1,64 @@
 import React from 'react'
 import WebLayout from '@/Layouts/WebLayout'
-import PageHeading from '@/Pages/Web/components/PageHeading'
-import CtaPanel from '@/Pages/Web/components/CtaPanel'
 
-const strengths = [
+const services = [
     {
-        title: 'MVP・小規模サービスの立ち上げ',
-        description: '最初の一歩で迷わないために、必要最低限の機能を一緒に整理します。',
+        title: 'Webサイト制作',
+        description: [
+            '会社サイト・サービスサイト・LPなど、',
+            '目的に合わせたWebサイトを制作します。',
+            'デザインから実装まで一貫して対応可能です。',
+        ],
     },
     {
-        title: '管理画面・業務システム',
-        description: '日々使う人の負担を減らすための導線と情報整理を重視します。',
+        title: '業務システム開発',
+        description: [
+            '日々の業務を楽にするための',
+            '管理画面・業務ツール・社内システムを開発します。',
+            '「Excelで管理している作業をシステム化したい」',
+            'といった相談も多くいただいています。',
+        ],
     },
     {
-        title: '設計を意識した開発',
-        description: '後から仕様を追加しても破綻しにくい構成を意識しています。',
+        title: 'スマホアプリ開発',
+        description: [
+            'iOS / Android向けのアプリ開発に対応しています。',
+            'アイデア段階からのご相談も可能です。',
+        ],
     },
     {
-        title: 'テスト・保守を見据えた構成',
-        description: '運用後に困らないよう、引き継ぎやすい整理を行います。',
+        title: '保守・改善・追加開発',
+        description: [
+            '作って終わりではなく、',
+            '公開後の改善・機能追加・保守対応も行っています。',
+            '長く付き合えるパートナーを目指しています。',
+        ],
     },
 ]
-
-const quality = ['要件の言語化', '進捗の共有', 'テストの実施', '後から触る人のための整理']
 
 export const Services = React.memo(function Services() {
     return (
         <WebLayout>
-            <div className="space-y-12">
-                <PageHeading
-                    title="サービス"
-                    lead="ひたすらシステム開発では、『何を作るか』よりも『なぜ作るか』を大切にしています。目的や背景を整理した上で、最適な形を一緒に考え、実装まで行います。"
-                    eyebrow="Services"
-                />
+            <div className="space-y-10">
+                <header className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-10">
+                    <h1 className="text-2xl font-semibold text-brand-text md:text-4xl">できること</h1>
+                </header>
 
-                <section className="space-y-6">
-                    <h2 className="text-xl font-semibold text-slate-900">得意なこと</h2>
-                    <div className="grid gap-4 md:grid-cols-2">
-                        {strengths.map((item) => (
-                            <div key={item.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                                <h3 className="text-base font-semibold text-slate-900">{item.title}</h3>
-                                <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.description}</p>
-                            </div>
-                        ))}
-                    </div>
+                <section className="grid gap-4 md:grid-cols-2">
+                    {services.map((service) => (
+                        <div key={service.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                            <h2 className="text-lg font-semibold text-brand-text">{service.title}</h2>
+                            <p className="mt-3 text-sm leading-relaxed text-brand-text/80">
+                                {service.description.map((line) => (
+                                    <React.Fragment key={line}>
+                                        {line}
+                                        <br />
+                                    </React.Fragment>
+                                ))}
+                            </p>
+                        </div>
+                    ))}
                 </section>
-
-                <section className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                    <h2 className="text-xl font-semibold text-slate-900">品質への取り組み</h2>
-                    <div className="mt-4 grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
-                        {quality.map((item) => (
-                            <div key={item} className="rounded-xl border border-slate-200 bg-white px-4 py-3">
-                                {item}
-                            </div>
-                        ))}
-                    </div>
-                </section>
-
-                <CtaPanel
-                    title="進め方も含めて、まずは相談から"
-                    description="要件が固まっていない状態でもOKです。話しながら整理していきます。"
-                    primaryLabel="無料で相談する"
-                    primaryRoute="web.contact"
-                    secondaryLabel="進め方を見る"
-                    secondaryRoute="web.process"
-                />
             </div>
         </WebLayout>
     )
